@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>DevFLix</title>
+  <link
+   rel="stylesheet"
+   href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+  />
+  <link rel="stylesheet" href="css/app.css" />
+ </head>
+ <body>
+  <header class="site-header">
+   <img src="img/logo.svg" class="logotipo" alt="logotipo" />
+  </header>
+  <main class="formulario-login contenedor">
+   <form action="#">
+    <legend>Inicia sesion</legend>
+    <div class="campo">
+     <input type="text" id="usuario" name="usuario" />
+     <label for="usuario">Email o numero de telefon</label>
+    </div>
+    <div class="campo">
+     <input type="password" id="password" name="password" />
+     <label for="password">Contraseña</label>
+     <span>Mostrar</span>
+    </div>
+    <div class="submit">
+     <input type="submit" value="Iniciar sesion" />
+    </div>
+    <div class="acciones">
+     <div class="recuerdame">
+      <input type="checkbox" />
+      <label for="Recuerdame">Recuerdame</label>
+     </div>
+     <div class="ayuda">
+      <a href="#">¿Necesitas ayuda?</a>
+     </div>
+    </div>
+    <div class="contenido-inferior">
+     <a href="#">Iniciar session con facebook</a>
+     <p class="nuevo-usuario">
+      ¿Primera vez en Neflix? <a href="#">Suscribete ya</a>
+     </p>
+    </div>
+   </form>
+  </main>
+
+  <footer class="site-footer">
+   <div class="contenedor">
+    <p>¿Preguntas? Llama al 01800-265-0161</p>
+    <nav class="menu-footer">
+     <a href="#">Terminos de la tarjetas de regalo</a>
+     <a href="#">Terminos de uso</a>
+     <a href="#">Declaracion de privacidad</a>
+    </nav>
+    <select name="lenguaje" id="lenguaje" class="lenguaje">
+     <option value="eng">English</option>
+     <option value="esp">Español</option>
+    </select>
+   </div>
+  </footer>
+  <script src="./js/scripts.js"></script>
+ </body>
+</html>

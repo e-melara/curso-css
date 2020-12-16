@@ -1,0 +1,34 @@
+@mixin boton($bgColor, $txtColor) {
+ width: 100%;
+ border: none;
+ display: block;
+ padding: 1rem 0;
+ font-size: 1rem;
+ color: $txtColor;
+ text-align: center;
+ text-decoration: none;
+ border-radius: $radius;
+ background-color: $bgColor;
+}
+
+@mixin phone {
+ @media screen and (min-width: #{$phone}) {
+  @content;
+ }
+}
+
+@mixin tablet {
+ @media screen and (min-width: #{$table}) {
+  @content;
+ }
+}
+
+@mixin desktop {
+ @media screen and (min-width: #{$desktop}) {
+  @content;
+ }
+}
+
+@mixin box-sizing($box-model) {
+ box-sizing: $box-model;
+}
