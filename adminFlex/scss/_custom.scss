@@ -1,0 +1,233 @@
+html {
+ @include box-sizing(border-box);
+ height: 100%;
+}
+*,
+*:after,
+*:before {
+ @include box-sizing(inherit);
+}
+body {
+ height: 100%;
+ background-color: $gris;
+ font-family: $fuente_principal;
+}
+img {
+ max-width: 100%;
+}
+.centrado {
+ text-align: center;
+}
+.oculto {
+ display: none;
+}
+
+.pagina {
+ display: flex;
+ min-height: 100%;
+ flex-direction: column;
+}
+
+.contenedor-principal {
+ flex: 1;
+ display: flex;
+}
+
+.contenido {
+ flex: 1;
+ padding: 2rem;
+}
+
+.no-menu.pagina {
+ .sidebar {
+  margin-left: -20rem;
+ }
+}
+
+// sidebar
+.sidebar {
+ padding: 1rem;
+ flex: 0 0 20rem;
+ color: white;
+ transition: margin-left 0.3s ease;
+ background-color: $grisOscuro;
+ .usuario {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  img {
+   max-width: 5rem;
+  }
+  font-weight: bold;
+  span {
+   font-weight: normal;
+  }
+ }
+ .buscador {
+  margin-top: 1rem;
+  input[type="text"] {
+   width: 100%;
+   border: none;
+   height: 3rem;
+   padding-left: 1rem;
+   border-radius: 10px;
+  }
+ }
+ .menu-admin {
+  margin-top: 2rem;
+ }
+}
+
+.menu-admin {
+ .menu {
+  padding: 0 0 0 1rem;
+  list-style: none;
+  > li {
+   padding: 0.5rem;
+   ul {
+    display: none;
+    padding: 1rem;
+    list-style: none;
+    margin-top: 1rem;
+    background-color: darken($color: $grisOscuro, $amount: 3);
+    li {
+     margin-bottom: 1rem;
+     &:last-of-type {
+      margin-bottom: 0px;
+     }
+    }
+   }
+   a {
+    color: white;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: padding-left 0.3s ease;
+    &:hover {
+     padding-left: 2rem;
+     background-color: $primario;
+    }
+   }
+   &:hover {
+    ul {
+     display: block;
+    }
+   }
+  }
+ }
+}
+// Header
+.header {
+ display: flex;
+ .nombre-sitio {
+  display: flex;
+  flex: 0 0 5rem;
+  padding: 1rem;
+  align-items: center;
+  @include desktop {
+   flex: 0 0 20rem;
+  }
+  background-color: $secundario;
+  h1 {
+   margin: 0;
+   color: $blanco;
+  }
+  .escritorio {
+   display: none;
+   @include desktop {
+    display: block;
+   }
+  }
+  .movil {
+   @include desktop {
+    display: none;
+   }
+  }
+ }
+}
+
+.barra {
+ flex: 1;
+ display: flex;
+ background-color: $primario;
+ justify-content: space-between;
+ .menu-izquierdo {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  i {
+   color: white;
+   font-size: 1.6rem;
+  }
+  .fa-arrow-right {
+   display: none;
+  }
+ }
+ .menu-derecho {
+  display: flex;
+  .caja {
+   display: flex;
+   padding: 0 1rem;
+   align-items: center;
+   &:hover {
+    background-color: $secundario;
+   }
+   a {
+    color: white;
+    text-decoration: none;
+    span {
+     padding: 0.5rem;
+     margin-left: 0.5rem;
+     border-radius: 50%;
+     background-color: $terciario;
+    }
+   }
+  }
+ }
+}
+
+.formulario {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ .campo {
+  flex: 0 0 100%;
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+
+  @include tablet {
+   flex: 0 0 calc(50% - 1rem);
+  }
+  &.expandir {
+   flex: 0 0 calc(100%);
+   label {
+    flex: 0 0 12.5%;
+   }
+   textarea {
+    flex: 1;
+   }
+  }
+  label {
+   flex: 0 0 25%;
+  }
+  input[type="text"] {
+   flex: 0 0 75%;
+   height: 2rem;
+  }
+  .opciones {
+   flex: 1;
+   display: flex;
+   label {
+    padding-left: 1rem;
+   }
+  }
+
+  &.enviar {
+   display: flex;
+   justify-content: flex-end;
+   .boton {
+    @include boton($primario);
+   }
+  }
+ }
+}
