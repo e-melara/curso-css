@@ -1,0 +1,75 @@
+html {
+ box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+ box-sizing: inherit;
+}
+
+body {
+ margin: 0;
+ background-color: #1fa2ff;
+ color: white;
+ background: linear-gradient(to right, #a6ffcb, #12d8fa, #1fa2ff);
+ background: -webkit-linear-gradient(to right, #a6ffcb, #12d8fa, #1fa2ff);
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+ display: grid;
+ margin: 0 auto;
+ max-width: 900px;
+ height: 100vh;
+ background-color: white;
+
+ grid-template-areas: "h" "n" "iz" "c" "d" "f";
+}
+
+.contenedor > * {
+ padding: 2rem;
+ font-size: 1.4rem;
+}
+.header {
+ grid-area: h;
+ background-color: cornflowerblue;
+}
+
+.navegacion {
+ grid-area: n;
+ background-color: coral;
+}
+
+.izquierda {
+ grid-area: iz;
+ background-color: cadetblue;
+}
+
+.contenido-principal {
+ grid-area: c;
+ background-color: crimson;
+}
+
+.derecha {
+ grid-area: d;
+ background-color: darkblue;
+}
+.footer {
+ grid-area: f;
+ background-color: darkmagenta;
+}
+
+@media screen and (min-width: 768px) {
+ .contenedor {
+  grid-template-areas:
+   "h h h h"
+   "iz n n n"
+   "iz c c d"
+   "iz c c d"
+   "f f f f";
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 80px 80px auto auto 80px;
+ }
+}
